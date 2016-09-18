@@ -16,6 +16,7 @@
             });
         };
 
+
         vm.search = function () {
             if (!vm.searchQuery) {
                 return vm.loadAll();
@@ -25,6 +26,6 @@
             });
         };
         vm.loadAll();
-        
+
     }
 })();
