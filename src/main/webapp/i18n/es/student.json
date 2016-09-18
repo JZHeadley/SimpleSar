@@ -25,6 +25,7 @@
             "dependent": "Dependent",
             "dob": "Dob",
             "email": "Email",
+            "address": "Address",
             "parent": "Parent"
         }
     }

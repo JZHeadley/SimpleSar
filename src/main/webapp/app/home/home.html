@@ -6,13 +6,19 @@
         document.getElementById("notif2").style.display = "none";
 
     }
+    function myFunction3() {
+        document.getElementById("notif3").style.display = "none";
+
+    }
 </script>
+
 <div class="Message" id="notif">
     <div class="Message-icon">
         <i class="fa fa-bell-o"></i>
     </div>
     <div class="Message-body">
-        <p>Do you know that you can assign status and relation to a company right in the visit list?</p>
+        <p>The National Student Loan Data System (NSLDS) indicates that one or more of your federal student loans have
+            been discharged. If you have questions, contact the financial aid office at your school.</p>
         <button onclick="myFunction()" class="Message-button" id="js-messageClose">Complete</button>
     </div>
     <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
@@ -23,8 +29,19 @@
         <i class="fa fa-bell-o"></i>
     </div>
     <div class="Message-body">
-        <p>Do you know that you can assign status and relation to a company right in the visit list?</p>
+        <p>If you need to make corrections to your information, you may either make them online at www.fafsa.gov using
+            your FSA ID, or by using this SAR.</p>
         <button onclick="myFunction2()" class="Message-button" id="js-messageClose">Complete</button>
+    </div>
+    <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
+</div>
+<div class="Message" id="notif3">
+    <div class="Message-icon">
+        <i class="fa fa-bell-o"></i>
+    </div>
+    <div class="Message-body">
+        <p>WHAT YOU MUST DO NOW (Use the checklist below to make sure that all of your issues are resolved.</p>
+        <button onclick="myFunction3()" class="Message-button" id="js-messageClose">Complete</button>
     </div>
     <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
 </div>
@@ -36,36 +53,36 @@
             <h3>Basic Information</h3>
             <p>Hover for more info Name, Address, Phone Number, Date of Birth, Sex, Dependency, Marital Status, etc.</p>
             <div class="slide">
-                <h4>Basic Info</h4>
+                <h4>Profile</h4>
                 <ul>
                     <br><i class="fa fa-angle-double-right custom"></i>{{student.firstName}} {{student.lastName}}</br>
                 </ul>
                 <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.email}}</br></ul>
+                <!--<ul><br><i class="fa fa-angle-double-right custom"></i>{{student.address}}</br></ul>-->
                 <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.phoneNumber}}</br></ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.dob}}</br></ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>Gender: {{student.gender}}</br></ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>Dependent? {{student.dependent}}</br></ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>Marital Status? {{student.maritalStatus}}</br></ul>
             </div>
         </div>
         <div class="panel animated slideInDown">
             <img src="../../content/images/outstanding.png" height="199" width="143"/>
-            <h3>Development Services</h3>
-            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <h3>Outstanding Loans</h3>
+            <p>The total amount of unpaid loans still on your account.</p>
             <div class="slide">
-                <h4>Services</h4>
-                <ul>
-                    <li><i class="fa fa-check"></i> Project Strategy and Planning</li>
-                    <li><i class="fa fa-check"></i> Content Management Systems</li>
-                    <li><i class="fa fa-check"></i> Email Marketing</li>
-                    <li><i class="fa fa-check"></i> Mobile App Development</li>
-                    <li><i class="fa fa-check"></i> Usability Testing</li>
-                    <li><i class="fa fa-check"></i> Responsive Development</li>
-                    <li><i class="fa fa-check"></i> Scheduled Maintenance</li>
-                    <li><i class="fa fa-check"></i> eCommerce Solutions</li>
-                </ul>
+                <h4>Outstanding Loans</h4>
+
+                    <ul><br><i class="fa fa-angle-double-right custom"></i>Year 1: $2,200</br></ul>
+                    <ul><br><i class="fa fa-angle-double-right custom"></i>Year 2: $1,700</br></ul>
+                    <ul><br><i class="fa fa-angle-double-right custom"></i>Total: $3,700</br></ul>
+
             </div>
         </div>
         <div class="panel animated slideInDown">
             <img src="../../content/images/loan.png" height="190" width="240"/>
-            <h3>SEO Services</h3>
-            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <h3>Maximum Aid</h3>
+            <p>Estimated amount of money you should apply for based on tuition costs and your EFC.</p>
             <div class="slide">
                 <h4>Services</h4>
                 <ul>
@@ -80,28 +97,11 @@
                 </ul>
             </div>
         </div>
-        <div class="panel animated slideInDown">
-            <img src="../../content/images/efc.png" height="200" width="230"/>
-            <h3>SEO Services</h3>
-            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <div class="slide">
-                <h4>Services</h4>
-                <ul>
-                    <li><i class="fa fa-check"></i> Analytics</li>
-                    <li><i class="fa fa-check"></i> Active Search</li>
-                    <li><i class="fa fa-check"></i> Code Optimization</li>
-                    <li><i class="fa fa-check"></i> Link Building</li>
-                    <li><i class="fa fa-check"></i> Mobile Marketing</li>
-                    <li><i class="fa fa-check"></i> Landing Pages</li>
-                    <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
-                    <li><i class="fa fa-check"></i> Local SEO</li>
-                </ul>
-            </div>
-        </div>
+
         <div class="panel animated slideInDown">
             <img src="../../content/images/income.png" height="200" width="236"/>
-            <h3>SEO Services</h3>
-            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <h3>Expected Family Contribution</h3>
+            <p>What your family is giving you for the year, divided up into months (the higher this number, the less loans you will receive)</p>
             <div class="slide">
                 <h4>Services</h4>
                 <ul>
@@ -116,6 +116,26 @@
                 </ul>
             </div>
         </div>
+
+        <div class="panel animated slideInDown">
+            <img src="../../content/images/efc.png" height="200" width="230"/>
+            <h3>Grants &amp; Scholarships</h3>
+            <p>Total amount of free money you've received in scholarships and grants!</p>
+            <div class="slide">
+                <h4>Services</h4>
+                <ul>
+                    <li><i class="fa fa-check"></i> Analytics</li>
+                    <li><i class="fa fa-check"></i> Active Search</li>
+                    <li><i class="fa fa-check"></i> Code Optimization</li>
+                    <li><i class="fa fa-check"></i> Link Building</li>
+                    <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                    <li><i class="fa fa-check"></i> Landing Pages</li>
+                    <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                    <li><i class="fa fa-check"></i> Local SEO</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="row">
             <div class="panel animated slideInDown">
                 <img src="../../content/images/todo.png" height="200" width="224"/>
@@ -138,81 +158,4 @@
         </div>
     </div>
 </div>
-<div ng-cloak>
 
-    <div class="row">
-        <div class="col-md-8">
-            <h1 translate="home.title">Welcome, {{vm.account}}!</h1>
-            <p class="lead" translate="home.subtitle">This is your homepage</p>
-
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message"
-                     translate-values="{username: '{{vm.account.login}}'}">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
-                <div class="alert alert-warning" ng-switch-when="false"
-                     translate="global.messages.info.authenticated" translate-compile>
-                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the
-                    default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User
-                    (login="user"
-                    and password="user").
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register"
-                     translate-compile>
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new
-                    account</a>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="container" ng-repeat="student in vm.students track by student.id">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="../../content/images/Profile_avatar_placeholder_large.png" height="50"
-                     width="50"/>
-                <p>{{student.firstName}} {{student.lastName}}</p>
-                <p>E-mail: {{student.email}}</p>
-                <p>Phone: {{student.phoneNumber}}</p>
-            </div>
-
-
-            <div class="col-md-3" ng-repeat="financialData in vm.financialData track by financialData.id">
-                <p>Outstanding Loans: {{ financialData.outstandingLoands}}</p>
-                <p>Total = <span class="box">{{financialData.efcTotal}}</span></p>
-            </div>
-            <div class="col-md-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel rhoncus purus. Aliquam
-                    erat volutpat. Lorem ipsum dolor sit amet. </p>
-            </div>
-        </div>
-    </div>
-
-    <p translate="home.question">
-        If you have any question on JHipster:
-    </p>
-
-    <ul>
-        <li><a href="http://jhipster.github.io/" target="_blank" translate="home.link.homepage">JHipster
-            homepage</a></li>
-        <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank"
-               translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-        <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank"
-               translate="home.link.bugtracker">JHipster bug tracker</a></li>
-        <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank"
-               translate="home.link.chat">JHipster
-            public chat room</a></li>
-        <li><a href="https://twitter.com/java_hipster" target="_blank" translate="home.link.follow">follow
-            @java_hipster on Twitter</a></li>
-    </ul>
-
-    <p>
-        <span translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a
-        href="https://github.com/jhipster/generator-jhipster" target="_blank"
-        translate="home.github">Github</a>!
-    </p>
-</div>
-</div>
-</div>

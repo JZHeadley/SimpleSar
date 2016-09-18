@@ -73,9 +73,9 @@ body {
   color: #39cc62;
 }
 .wrapper .panel .slide ul {
-  padding: 1px 5px 1px 5px;
-  line-height: 0px;
-  font-size: 15px;
+  padding: 1px 5px 3px 5px;
+  line-height: 2px;
+  font-size: 16px;
   color: #F0F0F0;
   border-bottom: 1px solid #3e737b;
 }

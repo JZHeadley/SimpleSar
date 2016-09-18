@@ -80,6 +80,7 @@
                                 dependent: false,
                                 dob: null,
                                 email: null,
+                                address: null,
                                 id: null
                             };
                         }

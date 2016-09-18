@@ -57,6 +57,10 @@
                 <constraints nullable="true" />
             </column>
             
+            <column name="address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

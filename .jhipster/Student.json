@@ -72,6 +72,10 @@
         {
             "fieldName": "email",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20160918051329",

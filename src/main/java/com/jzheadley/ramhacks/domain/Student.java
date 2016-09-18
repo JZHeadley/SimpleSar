@@ -62,6 +62,9 @@ public class Student implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "address")
+    private String address;
+
     @OneToMany(mappedBy = "student")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -147,6 +150,14 @@ public class Student implements Serializable {
         this.email = email;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Set<Parent> getParents() {
         return parents;
     }
@@ -188,6 +199,7 @@ public class Student implements Serializable {
             ", dependent='" + dependent + "'" +
             ", dob='" + dob + "'" +
             ", email='" + email + "'" +
+            ", address='" + address + "'" +
             '}';
     }
 }
