@@ -1,50 +1,140 @@
+<script>
+    function myFunction() {
+        document.getElementById("notif").style.display = "none";
+    }
+    function myFunction2() {
+        document.getElementById("notif2").style.display = "none";
+
+    }
+</script>
+<div class="Message" id="notif">
+    <div class="Message-icon">
+        <i class="fa fa-bell-o"></i>
+    </div>
+    <div class="Message-body">
+        <p>Do you know that you can assign status and relation to a company right in the visit list?</p>
+        <button onclick="myFunction()" class="Message-button" id="js-messageClose">Complete</button>
+    </div>
+    <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
+</div>
+
+<div class="Message" id="notif2">
+    <div class="Message-icon">
+        <i class="fa fa-bell-o"></i>
+    </div>
+    <div class="Message-body">
+        <p>Do you know that you can assign status and relation to a company right in the visit list?</p>
+        <button onclick="myFunction2()" class="Message-button" id="js-messageClose">Complete</button>
+    </div>
+    <button class="Message-close js-messageClose"><i class="fa fa-times"></i></button>
+</div>
+
 <div class="wrapper" ng-repeat="student in vm.students track by student.id">
-    <div class="panel animated slideInDown">
-        <img src="http://timruby.me/42c-icon.png" alt=""/>
-        <h3>Basic Information</h3>
-        <p>Hover for more info Name, Address, Phone Number, Date of Birth, Sex, Dependency, Marital Status, etc.</p>
-        <div class="slide">
-            <h4>Basic Info</h4>
-            <ul>
-                <br><i class="fa fa-angle-double-right custom"></i>{{student.firstName}} {{student.lastName}}</br></ul>
-            <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.email}}</br></ul>
-            <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.phoneNumber}}</br></ul>
+    <div class="container">
+        <div class="panel animated slideInDown">
+            <img src="http://timruby.me/42c-icon.png" alt=""/>
+            <h3>Basic Information</h3>
+            <p>Hover for more info Name, Address, Phone Number, Date of Birth, Sex, Dependency, Marital Status, etc.</p>
+            <div class="slide">
+                <h4>Basic Info</h4>
+                <ul>
+                    <br><i class="fa fa-angle-double-right custom"></i>{{student.firstName}} {{student.lastName}}</br>
+                </ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.email}}</br></ul>
+                <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.phoneNumber}}</br></ul>
+            </div>
         </div>
-    </div>
-    <div class="panel animated slideInDown">
-        <img src="http://timruby.me/42c-icon.png" alt=""/>
-        <h3>Development Services</h3>
-        <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <div class="slide">
-            <h4>Services</h4>
-            <ul>
-                <li><i class="fa fa-check"></i> Project Strategy and Planning</li>
-                <li><i class="fa fa-check"></i> Content Management Systems</li>
-                <li><i class="fa fa-check"></i> Email Marketing</li>
-                <li><i class="fa fa-check"></i> Mobile App Development</li>
-                <li><i class="fa fa-check"></i> Usability Testing</li>
-                <li><i class="fa fa-check"></i> Responsive Development</li>
-                <li><i class="fa fa-check"></i> Scheduled Maintenance</li>
-                <li><i class="fa fa-check"></i> eCommerce Solutions</li>
-            </ul>
+        <div class="panel animated slideInDown">
+            <img src="http://timruby.me/42c-icon.png" alt=""/>
+            <h3>Development Services</h3>
+            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <div class="slide">
+                <h4>Services</h4>
+                <ul>
+                    <li><i class="fa fa-check"></i> Project Strategy and Planning</li>
+                    <li><i class="fa fa-check"></i> Content Management Systems</li>
+                    <li><i class="fa fa-check"></i> Email Marketing</li>
+                    <li><i class="fa fa-check"></i> Mobile App Development</li>
+                    <li><i class="fa fa-check"></i> Usability Testing</li>
+                    <li><i class="fa fa-check"></i> Responsive Development</li>
+                    <li><i class="fa fa-check"></i> Scheduled Maintenance</li>
+                    <li><i class="fa fa-check"></i> eCommerce Solutions</li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="panel animated slideInDown">
-        <img src="http://timruby.me/42c-icon.png" alt=""/>
-        <h3>SEO Services</h3>
-        <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <div class="slide">
-            <h4>Services</h4>
-            <ul>
-                <li><i class="fa fa-check"></i> Analytics</li>
-                <li><i class="fa fa-check"></i> Active Search</li>
-                <li><i class="fa fa-check"></i> Code Optimization</li>
-                <li><i class="fa fa-check"></i> Link Building</li>
-                <li><i class="fa fa-check"></i> Mobile Marketing</li>
-                <li><i class="fa fa-check"></i> Landing Pages</li>
-                <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
-                <li><i class="fa fa-check"></i> Local SEO</li>
-            </ul>
+        <div class="panel animated slideInDown">
+            <img src="http://timruby.me/42c-icon.png" alt=""/>
+            <h3>SEO Services</h3>
+            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <div class="slide">
+                <h4>Services</h4>
+                <ul>
+                    <li><i class="fa fa-check"></i> Analytics</li>
+                    <li><i class="fa fa-check"></i> Active Search</li>
+                    <li><i class="fa fa-check"></i> Code Optimization</li>
+                    <li><i class="fa fa-check"></i> Link Building</li>
+                    <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                    <li><i class="fa fa-check"></i> Landing Pages</li>
+                    <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                    <li><i class="fa fa-check"></i> Local SEO</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel animated slideInDown">
+            <img src="http://timruby.me/42c-icon.png" alt=""/>
+            <h3>SEO Services</h3>
+            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <div class="slide">
+                <h4>Services</h4>
+                <ul>
+                    <li><i class="fa fa-check"></i> Analytics</li>
+                    <li><i class="fa fa-check"></i> Active Search</li>
+                    <li><i class="fa fa-check"></i> Code Optimization</li>
+                    <li><i class="fa fa-check"></i> Link Building</li>
+                    <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                    <li><i class="fa fa-check"></i> Landing Pages</li>
+                    <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                    <li><i class="fa fa-check"></i> Local SEO</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel animated slideInDown">
+            <img src="http://timruby.me/42c-icon.png" alt=""/>
+            <h3>SEO Services</h3>
+            <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <div class="slide">
+                <h4>Services</h4>
+                <ul>
+                    <li><i class="fa fa-check"></i> Analytics</li>
+                    <li><i class="fa fa-check"></i> Active Search</li>
+                    <li><i class="fa fa-check"></i> Code Optimization</li>
+                    <li><i class="fa fa-check"></i> Link Building</li>
+                    <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                    <li><i class="fa fa-check"></i> Landing Pages</li>
+                    <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                    <li><i class="fa fa-check"></i> Local SEO</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel animated slideInDown">
+                <img src="http://timruby.me/42c-icon.png" alt=""/>
+                <h3>SEO Services</h3>
+                <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <div class="slide">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><i class="fa fa-check"></i> Analytics</li>
+                        <li><i class="fa fa-check"></i> Active Search</li>
+                        <li><i class="fa fa-check"></i> Code Optimization</li>
+                        <li><i class="fa fa-check"></i> Link Building</li>
+                        <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                        <li><i class="fa fa-check"></i> Landing Pages</li>
+                        <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                        <li><i class="fa fa-check"></i> Local SEO</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
