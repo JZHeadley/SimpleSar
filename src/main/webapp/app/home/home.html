@@ -1,4 +1,55 @@
+<div class="wrapper" ng-repeat="student in vm.students track by student.id">
+    <div class="panel animated slideInDown">
+        <img src="http://timruby.me/42c-icon.png" alt=""/>
+        <h3>Basic Information</h3>
+        <p>Hover for more info Name, Address, Phone Number, Date of Birth, Sex, Dependency, Marital Status, etc.</p>
+        <div class="slide">
+            <h4>Basic Info</h4>
+            <ul>
+                <br><i class="fa fa-angle-double-right custom"></i>{{student.firstName}} {{student.lastName}}</br></ul>
+            <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.email}}</br></ul>
+            <ul><br><i class="fa fa-angle-double-right custom"></i>{{student.phoneNumber}}</br></ul>
+        </div>
+    </div>
+    <div class="panel animated slideInDown">
+        <img src="http://timruby.me/42c-icon.png" alt=""/>
+        <h3>Development Services</h3>
+        <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <div class="slide">
+            <h4>Services</h4>
+            <ul>
+                <li><i class="fa fa-check"></i> Project Strategy and Planning</li>
+                <li><i class="fa fa-check"></i> Content Management Systems</li>
+                <li><i class="fa fa-check"></i> Email Marketing</li>
+                <li><i class="fa fa-check"></i> Mobile App Development</li>
+                <li><i class="fa fa-check"></i> Usability Testing</li>
+                <li><i class="fa fa-check"></i> Responsive Development</li>
+                <li><i class="fa fa-check"></i> Scheduled Maintenance</li>
+                <li><i class="fa fa-check"></i> eCommerce Solutions</li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel animated slideInDown">
+        <img src="http://timruby.me/42c-icon.png" alt=""/>
+        <h3>SEO Services</h3>
+        <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <div class="slide">
+            <h4>Services</h4>
+            <ul>
+                <li><i class="fa fa-check"></i> Analytics</li>
+                <li><i class="fa fa-check"></i> Active Search</li>
+                <li><i class="fa fa-check"></i> Code Optimization</li>
+                <li><i class="fa fa-check"></i> Link Building</li>
+                <li><i class="fa fa-check"></i> Mobile Marketing</li>
+                <li><i class="fa fa-check"></i> Landing Pages</li>
+                <li><i class="fa fa-check"></i> Pay Per Click Optimization</li>
+                <li><i class="fa fa-check"></i> Local SEO</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div ng-cloak>
+
     <div class="row">
         <div class="col-md-8">
             <h1 translate="home.title">Welcome, {{vm.account}}!</h1>
@@ -23,51 +74,55 @@
                     account</a>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="../../content/images/Profile_avatar_placeholder_large.png" height="50"
-                             width="50"/>
-                        <p>{{ramHacksApp.students}}</p>
-                        <p>E-mail</p>
-                        <p>phone</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel rhoncus purus. Aliquam
-                            erat volutpat. Lorem ipsum dolor sit amet. </p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>Outstanding Loans:</p>
-                        <p>Total = <span class="box">{{ totalOutstandingLoans }}</span></p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel rhoncus purus. Aliquam
-                            erat volutpat. Lorem ipsum dolor sit amet. </p>
-                    </div>
-                </div>
-            </div>
 
-            <p translate="home.question">
-                If you have any question on JHipster:
-            </p>
 
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank" translate="home.link.homepage">JHipster
-                    homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank"
-                       translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank"
-                       translate="home.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank"
-                       translate="home.link.chat">JHipster
-                    public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" translate="home.link.follow">follow
-                    @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-                <span translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a
-                href="https://github.com/jhipster/generator-jhipster" target="_blank"
-                translate="home.github">Github</a>!
-            </p>
         </div>
     </div>
+    <div class="container" ng-repeat="student in vm.students track by student.id">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="../../content/images/Profile_avatar_placeholder_large.png" height="50"
+                     width="50"/>
+                <p>{{student.firstName}} {{student.lastName}}</p>
+                <p>E-mail: {{student.email}}</p>
+                <p>Phone: {{student.phoneNumber}}</p>
+            </div>
+
+
+            <div class="col-md-3" ng-repeat="financialData in vm.financialData track by financialData.id">
+                <p>Outstanding Loans: {{ financialData.outstandingLoands}}</p>
+                <p>Total = <span class="box">{{financialData.efcTotal}}</span></p>
+            </div>
+            <div class="col-md-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel rhoncus purus. Aliquam
+                    erat volutpat. Lorem ipsum dolor sit amet. </p>
+            </div>
+        </div>
+    </div>
+
+    <p translate="home.question">
+        If you have any question on JHipster:
+    </p>
+
+    <ul>
+        <li><a href="http://jhipster.github.io/" target="_blank" translate="home.link.homepage">JHipster
+            homepage</a></li>
+        <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank"
+               translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
+        <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank"
+               translate="home.link.bugtracker">JHipster bug tracker</a></li>
+        <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank"
+               translate="home.link.chat">JHipster
+            public chat room</a></li>
+        <li><a href="https://twitter.com/java_hipster" target="_blank" translate="home.link.follow">follow
+            @java_hipster on Twitter</a></li>
+    </ul>
+
+    <p>
+        <span translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a
+        href="https://github.com/jhipster/generator-jhipster" target="_blank"
+        translate="home.github">Github</a>!
+    </p>
+</div>
+</div>
 </div>

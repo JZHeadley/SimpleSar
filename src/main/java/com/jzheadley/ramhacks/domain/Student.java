@@ -59,6 +59,9 @@ public class Student implements Serializable {
     @Column(name = "dob")
     private LocalDate dob;
 
+    @Column(name = "email")
+    private String email;
+
     @OneToMany(mappedBy = "student")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -136,6 +139,14 @@ public class Student implements Serializable {
         this.dob = dob;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Set<Parent> getParents() {
         return parents;
     }
@@ -176,6 +187,7 @@ public class Student implements Serializable {
             ", maritalStatus='" + maritalStatus + "'" +
             ", dependent='" + dependent + "'" +
             ", dob='" + dob + "'" +
+            ", email='" + email + "'" +
             '}';
     }
 }

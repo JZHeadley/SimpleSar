@@ -5,31 +5,20 @@
         .module('ramHacksApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', 'Student'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', 'Student', 'FinancialData'];
 
 })();
-function HomeController($scope, Principal, LoginService, $state, Student) {
+function HomeController($scope, Principal, LoginService, $state, Student, FinancialData) {
     var vm = this;
 
-    // vm.student = Student;
     vm.account = null;
     vm.isAuthenticated = null;
     vm.login = LoginService.open;
     vm.register = register;
+
     $scope.$on('authenticationSuccess', function () {
         getAccount();
     });
-    console.log(Student);
-
-    vm.students = [];
-    vm.loadAll = function () {
-        Student.query(function (result) {
-            vm.students = result;
-        });
-    };
-    vm.loadAll();
-
-    console.log(vm.students);
 
     getAccount();
 
@@ -43,4 +32,21 @@ function HomeController($scope, Principal, LoginService, $state, Student) {
     function register() {
         $state.go('register');
     }
+
+    vm.students = [];
+
+    vm.loadAll = function () {
+        Student.query(function (result) {
+            vm.students = result;
+        });
+    };
+
+    vm.financialData = [];
+    vm.loadAllfinancialData = function () {
+        FinancialData.query(function (result) {
+            vm.financialData = result;
+        });
+    };
+    vm.loadAllfinancialData();
+    vm.loadAll();
 }

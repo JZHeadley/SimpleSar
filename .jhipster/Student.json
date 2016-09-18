@@ -68,6 +68,10 @@
         {
             "fieldName": "dob",
             "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20160918051329",

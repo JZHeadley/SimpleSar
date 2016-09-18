@@ -62,6 +62,8 @@ public class StudentResourceIntTest {
 
     private static final LocalDate DEFAULT_DOB = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DOB = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_EMAIL = "AAAAA";
+    private static final String UPDATED_EMAIL = "BBBBB";
 
     @Inject
     private StudentRepository studentRepository;
@@ -102,6 +104,7 @@ public class StudentResourceIntTest {
         student.setMaritalStatus(DEFAULT_MARITAL_STATUS);
         student.setDependent(DEFAULT_DEPENDENT);
         student.setDob(DEFAULT_DOB);
+        student.setEmail(DEFAULT_EMAIL);
     }
 
     @Test
@@ -128,6 +131,7 @@ public class StudentResourceIntTest {
         assertThat(testStudent.getMaritalStatus()).isEqualTo(DEFAULT_MARITAL_STATUS);
         assertThat(testStudent.isDependent()).isEqualTo(DEFAULT_DEPENDENT);
         assertThat(testStudent.getDob()).isEqualTo(DEFAULT_DOB);
+        assertThat(testStudent.getEmail()).isEqualTo(DEFAULT_EMAIL);
 
         // Validate the Student in ElasticSearch
         Student studentEs = studentSearchRepository.findOne(testStudent.getId());
@@ -278,7 +282,8 @@ public class StudentResourceIntTest {
                 .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())))
                 .andExpect(jsonPath("$.[*].maritalStatus").value(hasItem(DEFAULT_MARITAL_STATUS.toString())))
                 .andExpect(jsonPath("$.[*].dependent").value(hasItem(DEFAULT_DEPENDENT.booleanValue())))
-                .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())));
+                .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())))
+                .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())));
     }
 
     @Test
@@ -299,7 +304,8 @@ public class StudentResourceIntTest {
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER.toString()))
             .andExpect(jsonPath("$.maritalStatus").value(DEFAULT_MARITAL_STATUS.toString()))
             .andExpect(jsonPath("$.dependent").value(DEFAULT_DEPENDENT.booleanValue()))
-            .andExpect(jsonPath("$.dob").value(DEFAULT_DOB.toString()));
+            .andExpect(jsonPath("$.dob").value(DEFAULT_DOB.toString()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()));
     }
 
     @Test
@@ -329,6 +335,7 @@ public class StudentResourceIntTest {
         updatedStudent.setMaritalStatus(UPDATED_MARITAL_STATUS);
         updatedStudent.setDependent(UPDATED_DEPENDENT);
         updatedStudent.setDob(UPDATED_DOB);
+        updatedStudent.setEmail(UPDATED_EMAIL);
 
         restStudentMockMvc.perform(put("/api/students")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -347,6 +354,7 @@ public class StudentResourceIntTest {
         assertThat(testStudent.getMaritalStatus()).isEqualTo(UPDATED_MARITAL_STATUS);
         assertThat(testStudent.isDependent()).isEqualTo(UPDATED_DEPENDENT);
         assertThat(testStudent.getDob()).isEqualTo(UPDATED_DOB);
+        assertThat(testStudent.getEmail()).isEqualTo(UPDATED_EMAIL);
 
         // Validate the Student in ElasticSearch
         Student studentEs = studentSearchRepository.findOne(testStudent.getId());
@@ -394,6 +402,7 @@ public class StudentResourceIntTest {
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].maritalStatus").value(hasItem(DEFAULT_MARITAL_STATUS.toString())))
             .andExpect(jsonPath("$.[*].dependent").value(hasItem(DEFAULT_DEPENDENT.booleanValue())))
-            .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())));
+            .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())));
     }
 }

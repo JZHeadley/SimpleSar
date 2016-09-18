@@ -24,6 +24,7 @@
             "maritalStatus": "Marital Status",
             "dependent": "Dependent",
             "dob": "Dob",
+            "email": "Email",
             "parent": "Parent"
         }
     }

@@ -1,3 +1,161 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+$c-black: #111;
+$c-white: #fff;
+$c-blues: #2980B9, #d90000, #009FE3;
+$c-greys: #343C3F, #A2ACB0, #D9E1E4;
+$c-greens: #27AE60, #2ECC40, #01FF70;
+$c-reds: #C0392B, #FF4136, #E74C3C;
+$c-yellows: #F39C12, #FCA624, #F1C40F;
+$c-purples: #532E62, #8E44AD, #9B59B6;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+}
+
+.Message {
+  display: table;
+
+  margin: 40px auto 40px auto;
+  width: 90%;
+  height: 60px;
+  background-color: #d90000;
+  color: #fff;
+  transition: all 0.2s ease;
+
+  &.is-hidden {
+    opacity: 0;
+    height: 0;
+    font-size: 0;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+  }
+}
+  .Message--orange {
+    background-color: nth($c-yellows, 1);
+  }
+
+  .Message--red {
+    background-color: nth($c-reds, 2);
+  }
+
+  .Message--green {
+    background-color: nth($c-greens, 2);
+  }
+
+  .Message-icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 60px;
+    padding: 30px;
+    text-align: center;
+    background-color: #ab0000;
+
+    >i {
+      width: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .Message-body {
+    display: table-cell;
+    font-size: 120%;
+    vertical-align: middle;
+    padding: 30px 40px 30px 10px;
+
+    > p {
+      line-height: 1.2;
+      margin-top: 6px;
+    }
+  }
+
+  .Message-button {
+    position: relative;
+    margin-bottom: 40px;
+    background-color: #ab0000;
+    box-shadow: 0 3px #6b0000;
+    border:none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Source Sans Pro';
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(black, 0.3);
+    }
+
+    &:active {
+      background: rgba(black, 0.3);
+      box-shadow: 0 0px rgba(black, 0.4);
+      top: 3px;
+    }
+  }
+
+  .Message-close {
+    position: absolute;
+    background-color: rgba(black, 0.3);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    right: 5px;
+    top: 5px;
+    opacity: 0;
+    cursor: pointer;
+
+    .Message:hover {
+      opacity: 1;
+    }
+
+    &:hover {
+      background-color: rgba(black, 0.5);
+    }
+  }
+
+  .u-italic {
+  font-style: italic;
+ "pare":138712"function closeMessage(el) {
+  el.addClass('is-hidden');
+  }
+
+$('.js-messageClose').on('click', function(e) {
+  closeMessage($(this).closest('.Message'));
+  });
+
+$('#js-helpMe').on('click', function(e) {
+  alert('Help you we will, young padawan');
+  closeMessage($(this).closest('.Message'));
+  });
+
+$('#js-authMe').on('click', function(e) {
+  alert('Okelidokeli, requesting data transfer.');
+  closeMessage($(this).closest('.Message'));
+  });
+
+$('#js-showMe').on('click', function(e) {
+  alert("You're off to our help section. See you later!");
+  closeMessage($(this).closest('.Message'));
+  });
+
+$(document).ready(function() {
+  setTimeout(function() {
+    closeMessage($('#js-timer'));
+  }, 5000);
+
+.u-italic {
+  font-style: italic;
+}
+
 .glyphicon { margin-right:5px; }
 .thumbnail
 {
@@ -55,3 +213,4 @@
 {
     margin: 0 0 11px;
 }
+

@@ -79,6 +79,7 @@
                                 maritalStatus: null,
                                 dependent: false,
                                 dob: null,
+                                email: null,
                                 id: null
                             };
                         }
