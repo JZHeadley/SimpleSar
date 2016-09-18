@@ -1,0 +1,30 @@
+{
+    "ramHacksApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Vytvořit Student",
+                "createOrEditLabel": "Vytvořit nebo upravit Student",
+                "search": "Vyhledat Student"
+            },
+            "created": "Byl vytvořen potomek entity Student s identifikátorem {{ param }}",
+            "updated": "Potomek entity Student s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Student s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "ssn": "Ssn",
+            "dob": "Dob",
+            "gender": "Gender",
+            "phoneNumber": "Phone Number",
+            "maritalStatus": "Marital Status",
+            "dependent": "Dependent",
+            "parent": "Parent"
+        }
+    }
+}

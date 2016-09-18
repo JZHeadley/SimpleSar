@@ -1,0 +1,36 @@
+
+entity Student {
+  firstName String required,
+  lastName String required,
+  ssn String required,
+  dob String required,
+  gender String required,
+  phoneNumber String required,
+  maritalStatus String required,
+  dependent Boolean required
+  
+}
+
+entity Parent {
+  lastName String required,
+  middleInitial String,
+  ssn String required
+}
+
+entity FinancialData {
+	outstandingLoands BigDecimal required,
+    efcTotal BigDecimal required
+}
+
+relationship OneToMany {
+	Student to Parent
+}
+relationship OneToOne {
+	FinancialData{student} to Student{}
+}
+
+relationship OneToOne {
+	FinancialData{parent} to Parent{}
+}
+
+	

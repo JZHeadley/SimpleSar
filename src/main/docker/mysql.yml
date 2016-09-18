@@ -1,0 +1,14 @@
+version: '2'
+services:
+    ramhacks-mysql:
+        container_name: ramhacks-mysql
+        image: mysql:5.7.11
+        # volumes:
+        #     - ~/volumes/jhipster/RamHacks/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=ramhacks
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl

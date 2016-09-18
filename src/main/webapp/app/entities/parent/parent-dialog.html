@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myParentLabel" translate="ramHacksApp.parent.home.createOrEditLabel">Create or edit a Parent</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.parent.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.parent.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.parent.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.parent.lastName"
+                    required />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.parent.middleInitial" for="field_middleInitial">Middle Initial</label>
+            <input type="text" class="form-control" name="middleInitial" id="field_middleInitial"
+                    ng-model="vm.parent.middleInitial"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.parent.ssn" for="field_ssn">Ssn</label>
+            <input type="text" class="form-control" name="ssn" id="field_ssn"
+                    ng-model="vm.parent.ssn"
+                    required />
+            <div ng-show="editForm.ssn.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ssn.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="ramHacksApp.parent.student" for="field_student">Student</label>
+            <select class="form-control" id="field_student" name="student" ng-model="vm.parent.student" ng-options="student as student.id for student in vm.students track by student.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFinancialDataLabel" translate="ramHacksApp.financialData.home.createOrEditLabel">Create or edit a Financial Data</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.financialData.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.financialData.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.financialData.outstandingLoands" for="field_outstandingLoands">Outstanding Loands</label>
+            <input type="number" class="form-control" name="outstandingLoands" id="field_outstandingLoands"
+                    ng-model="vm.financialData.outstandingLoands"
+                    required />
+            <div ng-show="editForm.outstandingLoands.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.outstandingLoands.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.outstandingLoands.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.financialData.efcTotal" for="field_efcTotal">Efc Total</label>
+            <input type="number" class="form-control" name="efcTotal" id="field_efcTotal"
+                    ng-model="vm.financialData.efcTotal"
+                    required />
+            <div ng-show="editForm.efcTotal.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.efcTotal.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.efcTotal.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="ramHacksApp.financialData.student" for="field_student">Student</label>
+            <select class="form-control" id="field_student" name="student" ng-model="vm.financialData.student" ng-options="student as student.id for student in vm.students | orderBy:'id' track by student.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="ramHacksApp.financialData.parent" for="field_parent">Parent</label>
+            <select class="form-control" id="field_parent" name="parent" ng-model="vm.financialData.parent" ng-options="parent as parent.id for parent in vm.parents | orderBy:'id' track by parent.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

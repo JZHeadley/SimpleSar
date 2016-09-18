@@ -1,0 +1,39 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "student",
+      "otherEntityName": "student",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "middleInitial",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "ssn",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160918051330",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "parent"
+}

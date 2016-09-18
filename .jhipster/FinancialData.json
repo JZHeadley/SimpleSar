@@ -1,0 +1,45 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "one-to-one",
+      "relationshipName": "student",
+      "otherEntityName": "student",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "financialData"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-one",
+      "relationshipName": "parent",
+      "otherEntityName": "parent",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "financialData"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "outstandingLoands",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "efcTotal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160918051331",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "financial_data"
+}

@@ -1,0 +1,28 @@
+{
+    "health": {
+        "title": "Kontrola stavu",
+        "refresh.button": "Obnoviť",
+        "stacktrace": "Stacktrace",
+        "details": {
+            "details": "Detaily",
+            "properties": "Vlastnosti",
+            "name": "Názov",
+            "value": "Hodnota",
+            "error": "Chyba"
+        },
+        "indicator": {
+            "diskSpace": "Diskový priestor",
+            "mail": "Email",
+            "elasticsearch": "Elasticsearch",
+            "db": "Databáza"
+        },
+        "table": {
+            "service": "Názov služby",
+            "status": "Stav"
+        },
+        "status": {
+            "UP": "Spustené",
+            "DOWN": "Zastavené"
+        }
+    }
+}

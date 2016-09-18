@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity FinancialData.
+    -->
+    <changeSet id="20160918051331-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="financial_data"
+                                 constraintName="fk_financialdata_student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"/>
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="financial_data"
+                                 constraintName="fk_financialdata_parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="parent"/>
+
+    </changeSet>
+</databaseChangeLog>

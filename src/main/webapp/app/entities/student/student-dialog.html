@@ -1,0 +1,122 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStudentLabel" translate="ramHacksApp.student.home.createOrEditLabel">Create or edit a Student</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.student.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.student.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.student.firstName"
+                    required />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.student.lastName"
+                    required />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.ssn" for="field_ssn">Ssn</label>
+            <input type="text" class="form-control" name="ssn" id="field_ssn"
+                    ng-model="vm.student.ssn"
+                    required />
+            <div ng-show="editForm.ssn.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.ssn.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.dob" for="field_dob">Dob</label>
+            <input type="text" class="form-control" name="dob" id="field_dob"
+                    ng-model="vm.student.dob"
+                    required />
+            <div ng-show="editForm.dob.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dob.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.gender" for="field_gender">Gender</label>
+            <input type="text" class="form-control" name="gender" id="field_gender"
+                    ng-model="vm.student.gender"
+                    required />
+            <div ng-show="editForm.gender.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.gender.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.phoneNumber" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                    ng-model="vm.student.phoneNumber"
+                    required />
+            <div ng-show="editForm.phoneNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phoneNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.maritalStatus" for="field_maritalStatus">Marital Status</label>
+            <input type="text" class="form-control" name="maritalStatus" id="field_maritalStatus"
+                    ng-model="vm.student.maritalStatus"
+                    required />
+            <div ng-show="editForm.maritalStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.maritalStatus.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.dependent" for="field_dependent">Dependent</label>
+            <input type="checkbox" class="form-control" name="dependent" id="field_dependent"
+                    ng-model="vm.student.dependent"
+                     />
+            <div ng-show="editForm.dependent.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dependent.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

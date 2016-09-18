@@ -1,0 +1,25 @@
+{
+    "ramHacksApp": {
+        "parent" : {
+            "home": {
+                "title": "Parents",
+                "createLabel": "Vytvořit Parent",
+                "createOrEditLabel": "Vytvořit nebo upravit Parent",
+                "search": "Vyhledat Parent"
+            },
+            "created": "Byl vytvořen potomek entity Parent s identifikátorem {{ param }}",
+            "updated": "Potomek entity Parent s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Parent s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Parent {{ id }}?"
+            },
+            "detail": {
+                "title": "Parent"
+            },
+            "lastName": "Last Name",
+            "middleInitial": "Middle Initial",
+            "ssn": "Ssn",
+            "student": "Student"
+        }
+    }
+}

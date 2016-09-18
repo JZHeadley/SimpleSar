@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span translate="ramHacksApp.parent.detail.title">Parent</span> {{vm.parent.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="ramHacksApp.parent.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.parent.lastName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="ramHacksApp.parent.middleInitial">Middle Initial</span></dt>
+        <dd>
+            <span>{{vm.parent.middleInitial}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="ramHacksApp.parent.ssn">Ssn</span></dt>
+        <dd>
+            <span>{{vm.parent.ssn}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="ramHacksApp.parent.student">Student</span></dt>
+        <dd>
+            <a ui-sref="student-detail({id:vm.parent.student.id})">{{vm.parent.student.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

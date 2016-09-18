@@ -1,0 +1,25 @@
+{
+    "ramHacksApp": {
+        "financialData" : {
+            "home": {
+                "title": "Financial Data",
+                "createLabel": "Create a new Financial Data",
+                "createOrEditLabel": "Create or edit a Financial Data",
+                "search": "Search for Financial Data"
+            },
+            "created": "A new Financial Data is created with identifier {{ param }}",
+            "updated": "A Financial Data is updated with identifier {{ param }}",
+            "deleted": "A Financial Data is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Financial Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Financial Data"
+            },
+            "outstandingLoands": "Outstanding Loands",
+            "efcTotal": "Efc Total",
+            "student": "Student",
+            "parent": "Parent"
+        }
+    }
+}

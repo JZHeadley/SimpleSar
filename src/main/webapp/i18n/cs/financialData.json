@@ -1,0 +1,25 @@
+{
+    "ramHacksApp": {
+        "financialData" : {
+            "home": {
+                "title": "Financial Data",
+                "createLabel": "Vytvořit Financial Data",
+                "createOrEditLabel": "Vytvořit nebo upravit Financial Data",
+                "search": "Vyhledat Financial Data"
+            },
+            "created": "Byl vytvořen potomek entity Financial Data s identifikátorem {{ param }}",
+            "updated": "Potomek entity Financial Data s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Financial Data s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Financial Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Financial Data"
+            },
+            "outstandingLoands": "Outstanding Loands",
+            "efcTotal": "Efc Total",
+            "student": "Student",
+            "parent": "Parent"
+        }
+    }
+}

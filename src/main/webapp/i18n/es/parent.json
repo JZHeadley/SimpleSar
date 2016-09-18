@@ -1,0 +1,25 @@
+{
+    "ramHacksApp": {
+        "parent" : {
+            "home": {
+                "title": "Parents",
+                "createLabel": "Crear nuevo Parent",
+                "createOrEditLabel": "Crear o editar Parent",
+                "search": "Search for Parent"
+            },
+            "created": "Un nuevo Parent ha sido creado con el identificador {{ param }}",
+            "updated": "Un Parent ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Parent ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Parent {{ id }}?"
+            },
+            "detail": {
+                "title": "Parent"
+            },
+            "lastName": "Last Name",
+            "middleInitial": "Middle Initial",
+            "ssn": "Ssn",
+            "student": "Student"
+        }
+    }
+}
