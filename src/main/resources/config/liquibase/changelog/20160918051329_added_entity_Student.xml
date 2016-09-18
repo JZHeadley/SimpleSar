@@ -33,10 +33,6 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="dob" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
             <column name="gender" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
@@ -51,6 +47,10 @@
             
             <column name="dependent" type="bit">
                 <constraints nullable="false" />
+            </column>
+            
+            <column name="dob" type="date">
+                <constraints nullable="true" />
             </column>
             
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->

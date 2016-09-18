@@ -8,6 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -40,10 +41,6 @@ public class Student implements Serializable {
     private String ssn;
 
     @NotNull
-    @Column(name = "dob", nullable = false)
-    private String dob;
-
-    @NotNull
     @Column(name = "gender", nullable = false)
     private String gender;
 
@@ -58,6 +55,9 @@ public class Student implements Serializable {
     @NotNull
     @Column(name = "dependent", nullable = false)
     private Boolean dependent;
+
+    @Column(name = "dob")
+    private LocalDate dob;
 
     @OneToMany(mappedBy = "student")
     @JsonIgnore
@@ -96,14 +96,6 @@ public class Student implements Serializable {
         this.ssn = ssn;
     }
 
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -134,6 +126,14 @@ public class Student implements Serializable {
 
     public void setDependent(Boolean dependent) {
         this.dependent = dependent;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 
     public Set<Parent> getParents() {
@@ -171,11 +171,11 @@ public class Student implements Serializable {
             ", firstName='" + firstName + "'" +
             ", lastName='" + lastName + "'" +
             ", ssn='" + ssn + "'" +
-            ", dob='" + dob + "'" +
             ", gender='" + gender + "'" +
             ", phoneNumber='" + phoneNumber + "'" +
             ", maritalStatus='" + maritalStatus + "'" +
             ", dependent='" + dependent + "'" +
+            ", dob='" + dob + "'" +
             '}';
     }
 }

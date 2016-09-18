@@ -4,9 +4,9 @@
         .module('ramHacksApp')
         .factory('Student', Student);
 
-    Student.$inject = ['$resource'];
+    Student.$inject = ['$resource', 'DateUtils'];
 
-    function Student ($resource) {
+    function Student ($resource, DateUtils) {
         var resourceUrl =  'api/students/:id';
 
         return $resource(resourceUrl, {}, {
@@ -15,10 +15,24 @@
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
+                    data.dob = DateUtils.convertLocalDateFromServer(data.dob);
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {
+                method: 'PUT',
+                transformRequest: function (data) {
+                    data.dob = DateUtils.convertLocalDateToServer(data.dob);
+                    return angular.toJson(data);
+                }
+            },
+            'save': {
+                method: 'POST',
+                transformRequest: function (data) {
+                    data.dob = DateUtils.convertLocalDateToServer(data.dob);
+                    return angular.toJson(data);
+                }
+            }
         });
     }
 })();

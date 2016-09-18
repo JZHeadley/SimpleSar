@@ -50,18 +50,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="ramHacksApp.student.dob" for="field_dob">Dob</label>
-            <input type="text" class="form-control" name="dob" id="field_dob"
-                    ng-model="vm.student.dob"
-                    required />
-            <div ng-show="editForm.dob.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.dob.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="control-label" translate="ramHacksApp.student.gender" for="field_gender">Gender</label>
             <input type="text" class="form-control" name="gender" id="field_gender"
                     ng-model="vm.student.gender"
@@ -108,6 +96,16 @@
                     This field is required.
                 </p>
             </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ramHacksApp.student.dob" for="field_dob">Dob</label>
+                <div class="input-group">
+                    <input id="field_dob" type="text" class="form-control" name="dob" uib-datepicker-popup="{{dateformat}}" ng-model="vm.student.dob" is-open="vm.datePickerOpenStatus.dob"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dob')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
         </div>
 
     </div>

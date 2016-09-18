@@ -18,11 +18,6 @@
             <span>{{vm.student.ssn}}</span>
         </dd>
         <hr>
-        <dt><span translate="ramHacksApp.student.dob">Dob</span></dt>
-        <dd>
-            <span>{{vm.student.dob}}</span>
-        </dd>
-        <hr>
         <dt><span translate="ramHacksApp.student.gender">Gender</span></dt>
         <dd>
             <span>{{vm.student.gender}}</span>
@@ -41,6 +36,11 @@
         <dt><span translate="ramHacksApp.student.dependent">Dependent</span></dt>
         <dd>
             <span>{{vm.student.dependent}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="ramHacksApp.student.dob">Dob</span></dt>
+        <dd>
+            <span>{{vm.student.dob | date:'mediumDate'}}</span>
         </dd>
         <hr>
     </dl>

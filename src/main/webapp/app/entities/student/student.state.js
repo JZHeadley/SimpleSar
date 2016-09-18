@@ -74,11 +74,11 @@
                                 firstName: null,
                                 lastName: null,
                                 ssn: null,
-                                dob: null,
                                 gender: null,
                                 phoneNumber: null,
                                 maritalStatus: null,
                                 dependent: false,
+                                dob: null,
                                 id: null
                             };
                         }
