@@ -4,5 +4,5 @@ services:
         container_name: ramhacks-sonar
         image: sonarqube:5.3
         ports:
-            - 9000:9000
-            - 9092:9092
+            - 192.99.134.94:9000:9000
+            - 192.99.134.94:9092:9092

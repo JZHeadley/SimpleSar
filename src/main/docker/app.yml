@@ -10,7 +10,7 @@ services:
             - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/ramhacks?useUnicode=true&characterEncoding=utf8&useSSL=false
             - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
         ports:
-            - 8080:8080
+            - 192.99.134.94:8080:8080
     ramhacks-mysql:
         extends:
             file: mysql.yml

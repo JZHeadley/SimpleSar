@@ -6,5 +6,5 @@ services:
         # volumes:
         #     - ~/volumes/jhipster/RamHacks/elasticsearch/:/usr/share/elasticsearch/data/
         ports:
-            - 9200:9200
-            - 9300:9300
+            - 192.99.134.94:9200:9200
+            - 192.99.134.94:9300:9300
