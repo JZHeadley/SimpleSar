@@ -15,7 +15,8 @@ $c-purples: #532E62, #8E44AD, #9B59B6;
 }
 
 body {
-  background-color: #ddd;
+  /*background-color: #ddd;*/
+  background-color: #222222;
   font-family: 'Source Sans Pro';
   font-weight: 300;
 }

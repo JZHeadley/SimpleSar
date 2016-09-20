@@ -5,7 +5,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   color: #808080;
-  background: #39cc62;
+  background: #3d3d3d;
 }
 
 .wrapper {
@@ -70,7 +70,7 @@ body {
   text-shadow: none;
   font-size: 19px;
   font-weight: 600;
-  color: #39cc62;
+  color: #3d3d3d;
 }
 .wrapper .panel .slide ul {
   padding: 1px 5px 3px 5px;
